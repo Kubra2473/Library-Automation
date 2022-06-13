@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<style>
+body {
+	background-color:powderblue;
+	background-repeat: no-repeat;
+}
+
+div#yes {
+	margin-top: 20px;
+	margin-bottom: 150px;
+	margin-right: 500px;
+	margin-left: 500px;
+}
+
+div#yes {
+	border: 10px solid grey81;
+	outline-style: outset;
+	outline-color: black;
+	padding-left: 50px;
+	padding-right: 70px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	box-shadow: 20px 20px 10px grey;
+}
+
+div#no {
+	margin-top: 175px;
+	margin-bottom: 1px;
+	margin-right: 300px;
+	margin-left: 460px;
+}
+</style>
+</head>
+<body>
+	<div id="no">
+		<h1>Yonetici Paneli</h1>
+	</div>
+	<div id="yes">
+		<f:view>
+			<h:form>
+				<h:panelGrid columns="2">
+					Kullanici Adi:<h:inputText value="#{yoneticiGiris.kullaniciAdi}" />
+					Sifre:<h:inputSecret value="#{yoneticiGiris.sifre}" />
+					<h:commandButton action="#{yoneticiGiris.giris()}" value="Giris" />
+				
+				</h:panelGrid>
+				
+				
+			</h:form>
+			
+		</f:view>
+	</div>
+</body>
+</html>
+

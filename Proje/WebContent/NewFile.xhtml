@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style>
+body {
+	background: url(kkt.jpg);
+	background-size: 1850px 900px;
+	background-repeat: no-repeat;
+}
+
+</style>
+
+</h:head>
+<body>
+		<f:view>
+			<h:form>
+			<h:panelGrid columns="2">
+		Ad:<h:inputText value="#{demoBean.demo.ad}" />
+		Soyad:<h:inputText value="#{demoBean.demo.soyad}" />
+		Cinsiyet:<h:selectOneRadio value="#{demoBean.demo.cinsiyet}">
+						<f:selectItem itemLabel="Bayan" itemValue="Bayan" />
+						<f:selectItem itemLabel="Bay" itemValue="Bay" />
+					</h:selectOneRadio>
+		Yas:<h:inputText value="#{demoBean.demo.yas}" />
+		E posta:<h:inputText value="#{demoBean.demo.eposta}" />
+		Telefon:<h:inputText value="#{demoBean.demo.tel}" />
+		Kullanici Adi:<h:inputText value="#{demoBean.demo.kullaniciAdi}" />
+		Sifre:<h:inputSecret value="#{demoBean.demo.sifre}" />
+		Il:<h:selectOneMenu value="#{demoBean.demo.adres.il}" valueChangeListener="#{demoBean.ilceDegistir}" onchange="submit()">
+		<f:selectItems value="#{demoBean.liste}"/>
+		
+		</h:selectOneMenu>
+		Ilce:<h:selectOneMenu value="#{demoBean.demo.adres.ilce}">
+		<f:selectItems value="#{demoBean.ilceListesi}"/>
+		</h:selectOneMenu>
+        <h:commandButton action="#{demoBean.kaydet()}" value="Kaydet" />
+        <h:commandButton action="#{demoBean.duzenle()}" value="Guncelle" />
+      
+      	</h:panelGrid>
+      	
+				<h:commandButton action="Anasayfa2" value="Geri" />
+			<p:dataTable value="#{demoBean.kayitListesi}" var="kl">
+					<f:facet name="header">Uye Listesi</f:facet>
+					
+					<p:column>
+						<f:facet name="header">Duzenle</f:facet>
+						<h:commandLink value="Guncelle">
+							<f:setPropertyActionListener value="#{kl}"
+								target="#{demoBean.demo}" />
+						</h:commandLink>
+					</p:column> 
+					<p:column>
+						<f:facet name="header">Sil</f:facet>
+						<h:commandLink action="#{demoBean.sil()}" value="Sil">
+							<f:setPropertyActionListener value="#{kl}"
+								target="#{demoBean.demo}" />
+						</h:commandLink>
+					</p:column>
+					<p:column>
+						<f:facet name="header">Ad</f:facet>
+						<h:outputText value="#{kl.ad}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Soyad</f:facet>
+						<h:outputText value="#{kl.soyad}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">Cinsiyet</f:facet>
+						<h:outputText value="#{kl.cinsiyet}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">Yas</f:facet>
+						<h:outputText value="#{kl.yas}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">E posta</f:facet>
+						<h:outputText value="#{kl.eposta}" />
+					</p:column>
+
+					<p:column>
+						<f:facet name="header">Telefon</f:facet>
+						<h:outputText value="#{kl.tel}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Kullanici Adi</f:facet>
+						<h:outputText value="#{kl.kullaniciAdi}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Sifre</f:facet>
+						<h:outputText value="#{kl.sifre}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Il</f:facet>
+						<h:outputText value="#{kl.adres.il}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Ilce</f:facet>
+						<h:outputText value="#{kl.adres.ilce}" />
+					</p:column>
+
+
+				</p:dataTable>
+				
+				
+				
+				
+				
+				
+			</h:form>
+		</f:view>
+</body>
+</html>

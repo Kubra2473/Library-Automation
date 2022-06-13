@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+
+</h:head>
+<body>
+	<f:view>
+		<h:form id="K1" prependId="false">
+			<h1
+				style="background-color: Black; padding: 20px; margin: 0; color: Bisque; font-style: italic;">Kutuphane</h1>
+
+			<p:accordionPanel style="height:20px; width:700px;">
+				<p:tab title="Cahit zarifoglu">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:outputText
+							value="Cahit Zarifoğlu, 1 Temmuz 1940 tarihinde Ankara’da doğdu.
+                     Aslen Kahramanmaraşlı olan Zarifoğlu, babasının hakimlik mesleğinden dolayı öğrenimini farklı şehirlerde sürdürdü. 
+                     İlköğrenimine Şanlıurfa’da başladı. Daha sonra Kahramanmaraş’a taşınmaları üzerine öğrenimine burada devam etti.
+                     1955 yılında Maraş Lisesi’ne kaydoldu. Lise öğrenimi sırasında otostop yaparak bazı Avrupa ülkelerini gezdi. Edebiyatla tanışması da lise yıllarında gerçekleşti.
+                      İlk şiirleri, okul dergisi olan “Hamle“de yayımlandı." />
+
+					</h:panelGrid>
+				</p:tab>
+				<p:tab title="George Orwell">
+					<h:panelGrid columns="2" cellpadding="10">
+						
+						<h:outputText
+							value="George Orwell, ya da asıl adıyla Eric Arthur Blair, 20. yüzyıl İngiliz edebiyatının önde gelen kalemleri arasındadır. Bin Dokuz Yüz Seksen Dört adlı romanı ve bu romanda yarattığı Big Brother kavramı ile tanınır." />
+
+					</h:panelGrid>
+				</p:tab>
+				<p:tab title="Ilber Ortayli">
+					<h:panelGrid columns="2" cellpadding="10">
+						
+						<h:outputText
+							value="Ülkemizin tanınan tarih profesörlerinden İlber Ortaylı listemizin ilk sırasında yer alıyor. “Yaşayan kütüphane” olarak adlandırılan Ortaylı, eserleriyle tarihe meraklı olmayanların bile ilgisini çekmeyi başarıyor. “Türklerin Altın Çağı” , “Defterimden Portreler” , “İlber Ortaylı Seyahatnamesi” , “Türkiye’nin Yakın Tarihi” gibi kitaplara imza atan Ortaylı’nın 2019 yılının ilk aylarında yayımlanan kitabı “Bir Ömür Nasıl Yaşanır? Hayatta Doğru Seçimler İçin Öneriler” çok uzun zamandır “Çok Satan Kitaplar” listesinin müdavimi. " />
+
+					</h:panelGrid>
+				</p:tab>
+				<p:tab title="Sabahattin Ali ">
+					<h:panelGrid columns="2" cellpadding="10">
+						
+						<h:outputText
+							value="Şiirlerinin yanı sıra arkasında bıraktığı üç ölümsüz romanla edebiyatımızın usta kalemleri arasına giren Sabahattin Ali’ye okuyucular bu yıl da kayıtsız kalamadılar. Toplumsal güçlerin kişilikler üzerindeki sarsıcı etkisini ve güçsüz insanın çaresizliğini konu alan “İçimizdeki Şeytan” ve güçlü bir tutkunun hikayesi “Kürk Mantolu Madonna” yazarın ölümsüz eserleri arasında yer alıyor. Bu iki romanın yanı sıra edebiyatımızın en romantik kahramanlarından biri olan Yusuf ile tanışmamızı sağlayan “Kuyucaklı Yusuf”u da kitaplığınıza eklemenizi öneririz.  " />
+
+					</h:panelGrid>
+				</p:tab>
+				<p:tab title="Virginia Woolf ">
+					<h:panelGrid columns="2" cellpadding="10">
+						
+						<h:outputText
+							value="20. yüzyılın en önemli yazarlarından Virginia Woolf, kadın hareketinin öncü kitaplarından biri olan “Kendine Ait Bir Oda” ile üzerinden geçen doksan yıla rağmen okuyucuyu etkilemeyi başarıyor. Henüz okumadıysanız yazarın ilgi çekici romanı “Bayan Dalloway” ve “Dalgalar”ı da mutlaka okumalısınız.  " />
+
+					</h:panelGrid>
+				</p:tab>
+				<p:tab title="Gülseren Budayıcıoğlu">
+					<h:panelGrid columns="2" cellpadding="10">
+						
+						<h:outputText
+							value="1947 yılında Ankarada doğdu. 2008 yılında Günahın üç rengi 2011 yılında Hayata Dön kitaplarını yazdı." />
+
+					</h:panelGrid>
+				</p:tab>
+				<p:tab title="Zülfü Livaneli">
+					<h:panelGrid columns="2" cellpadding="10">
+						
+						<h:outputText
+							value="Romanları 30 dilde yayımlanan Zülfü Livaneli, 1946 yılında doğdu. 1972 yılında fikirlerinden dolayı askeri cezaevinde yattı, 11 yıl sürgünde yaşadı." />
+
+					</h:panelGrid>
+				</p:tab>
+
+
+
+
+
+
+
+			</p:accordionPanel>
+		</h:form>
+	     
+		<h:form id="K2" prependId="true">
+			<p:accordionPanel style="width:800px;float:right;height:500px;">
+			<f:facet name="header">Personel</f:facet>
+				<p:tab title="Mudur">
+					<p:dataTable value="#{demoView.mliste}" var="m" widgetVar="500">
+		<f:facet name="header">Mudur </f:facet>
+		<p:column>
+		<f:facet name="header">Numara</f:facet>
+		<h:outputText value="#{m.numara}" />
+		</p:column>
+		<p:column>
+		<f:facet name="header">Mudur Adi</f:facet>
+		<h:outputText value="#{m.ad}" />
+		</p:column>
+		<p:column>
+		<f:facet name="header">Mudur soyadi </f:facet>
+		<h:outputText value="#{m.soyad}" />
+		</p:column>
+		</p:dataTable>
+				</p:tab>
+				
+				<p:tab title="Kutuphane Sorumlusu">
+					<p:dataTable value="#{demoView.kliste}" var="k" widgetVar="500">
+		<f:facet name="header">Kutuphane Sorumlusu </f:facet>
+		<p:column>
+		<f:facet name="header"> Ad </f:facet>
+		<h:outputText value="#{k.ad}" />
+		</p:column>
+		<p:column>
+		<f:facet name="header">Soyad  </f:facet>
+		<h:outputText value="#{k.soyad}" />
+		</p:column>
+		<p:column>
+		<f:facet name="header">Gorev </f:facet>
+		<h:outputText value="#{k.gorev}" />
+		</p:column>
+		<p:column>
+		<f:facet name="header">Telefon </f:facet>
+		<h:outputText value="#{k.birim}" />
+		</p:column>
+		</p:dataTable>
+				</p:tab>
+				
+				<p:tab title="Sef  ">
+					<p:dataTable value="#{demoView.sliste}" var="s" widgetVar="500">
+		<f:facet name="header">Sef </f:facet>
+		<p:column>
+		<f:facet name="header">Sef Ad </f:facet>
+		<h:outputText value="#{s.ad}" />
+		</p:column>
+		<p:column>
+		<f:facet name="header">Sef soyad </f:facet>
+		<h:outputText value="#{s.soyad}" />
+		</p:column>
+		<p:column>
+		<f:facet name="header">Gorev </f:facet>
+		<h:outputText value="#{s.gorev}" />
+		</p:column>
+		<p:column>
+		<f:facet name="header">Telefon </f:facet>
+		<h:outputText value="#{s.tel}" />
+		</p:column>
+		
+		
+		</p:dataTable>
+				</p:tab>
+				
+				<p:tab title="Teknisyen">
+					
+		<p:dataTable value="#{demoView.tliste}" var="t" widgetVar="500">
+		<f:facet name="header">Teknisyen</f:facet>
+		<p:column>
+		<f:facet name="header">Ad: </f:facet>
+		<h:outputText value="#{t.ad}" />
+		</p:column>
+		<p:column>
+		<f:facet name="header"> Soyad  </f:facet>
+		<h:outputText value="#{t.soyad}" />
+		</p:column>
+		<p:column>
+		<f:facet name="header">Birim </f:facet>
+		<h:outputText value="#{t.birimi}" />
+		</p:column>
+		<p:column>
+		<f:facet name="header">E posta </f:facet>
+		<h:outputText value="#{t.eposta}" />
+		</p:column>
+		
+		
+		</p:dataTable>
+				</p:tab>
+
+
+
+
+
+
+
+			</p:accordionPanel>
+		</h:form>
+		
+		
+	</f:view>
+
+</body>
+</html>

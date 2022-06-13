@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<style type="text/css">
+.logo {
+	width: 5%
+}
+
+.detail {
+	width: 95%;
+	padding-left: 25px;
+}
+
+.detail td {
+	font-size: 24px;
+}
+
+.ui-datascroller .ui-datascroller-item {
+	border-bottom: 1px solid #A8A8A8;
+	padding: 25px 10px;
+	/* with the exported variables from Nova and Luna Themes*/
+	border-bottom-color: var(- -input-border-color, #A8A8A8);
+}
+</style>
+
+</h:head>
+<body>
+	<f:view>
+		<h:form id="form">
+
+			<p:dataScroller value="#{kitapBean.kayitListesi}" var="kl"
+				chunkSize="10" mode="inline" scrollHeight="500">
+				<f:facet name="header">
+            Kitap Listesi
+        </f:facet>
+
+              <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
+              <p:graphicImage value="/img/#{kl[0].kitapAdi}.jpg"/>
+              <p:outputPanel>
+					<h:panelGrid columns="2" cellpadding="5">
+						
+						<h:outputText value="Kitap Adi:" />
+						<h:outputText value="#{kl[0].kitapAdi}" style="font-weight: bold" />
+
+						<h:outputText value="Basim Tarihi:" />
+						<h:outputText value="#{kl[0].yayinTarihi}" style="font-weight: bold" />
+
+						<h:outputText value="Sayfa Sayisi:" />
+						<h:outputText value="#{kl[0].sayfaSayisi}" style="font-weight: bold" />
+
+					</h:panelGrid>
+                           <p:commandLink  update=":form:kitapDetail"
+				oncomplete="PF('kitapDialog').show()"  title="View Detail">
+				<h:outputText styleClass="ui-icon pi pi-search"
+							style="margin:0 auto;" />
+						<f:setPropertyActionListener value="#{kl}"
+							target="#{kitapBean.list}" />
+				
+				
+				</p:commandLink>
+
+				</p:outputPanel>
+              </h:panelGrid>
+         
+
+			</p:dataScroller>
+
+
+			<p:dialog header="Kitap" widgetVar="kitapDialog" modal="true"
+				showEffect="blind" hideEffect="explode" resizable="false">
+				<p:outputPanel id="kitapDetail" style="text-align:center;" >
+					<p:panelGrid columns="2" rendered="#{not empty kitapBean.list}"
+						columnClasses="label,value">
+						<h:outputText value="Kitap Adi:" />
+						<h:outputText value="#{kitapBean.list.kitapAdi}" />
+
+						<h:outputText value="Yazar Adi" />
+						<h:outputText value="#{kitapBean.list.yazar.yazarAdi}" />
+						<h:outputText value="Yazar Soyadi" />
+						<h:outputText value="#{kitapBean.list.yazar.yazarSoyadi}" />
+
+						<h:outputText value="Sayfa Sayisi" />
+						<h:outputText value="#{kitapBean.list.sayfaSayisi}" />
+
+						<h:outputText value="Basim Tarihi:" />
+						<h:outputText value="#{kitapBean.list.yayinTarihi}" />
+
+						<h:outputText value="Yayinevi" />
+						<h:outputText value="#{kitapBean.list.yayinevi.yayineviAdi}" />
+                        
+                        <h:outputText value="Bilgi" />
+						<h:outputText value="#{kitapBean.list.aciklama}" />
+
+
+
+					</p:panelGrid>
+
+				</p:outputPanel>
+
+			</p:dialog>
+		</h:form>
+
+
+	</f:view>
+</body>
+</html>

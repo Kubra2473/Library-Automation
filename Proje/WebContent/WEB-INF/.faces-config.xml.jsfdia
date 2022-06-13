@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#Giris.xhtml" PATH="/Giris.xhtml"
+  SHAPE="132,108,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Giris.xhtml:0" NAME="item"
+   PATH="/Giris.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="dogru::#Anasayfa2.xhtml" NAME="output"
+    PATH="/Anasayfa2.xhtml" TARGET="rules:#Anasayfa2.xhtml"
+    TITLE="dogru" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="UyeOl::#UyeOl.xhtml" NAME="output1"
+    PATH="/UyeOl.xhtml" TARGET="rules:#UyeOl.xhtml" TITLE="UyeOl" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#Anasayfa2.xhtml" PATH="/Anasayfa2.xhtml"
+  SHAPE="400,112,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Anasayfa2.xhtml:0" NAME="item"
+   PATH="/Anasayfa2.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Anasayfa2::#Anasayfa2.xhtml" NAME="output"
+    PATH="/Anasayfa2.xhtml" TARGET="rules:#Anasayfa2.xhtml"
+    TITLE="Anasayfa2" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="YoneticiGiris::#YoneticiGiris.xhtml"
+    NAME="output1" PATH="/YoneticiGiris.xhtml"
+    TARGET="rules:#YoneticiGiris.xhtml" TITLE="YoneticiGiris" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="Arsiv::#Arsiv.xhtml" NAME="output2"
+    PATH="/Arsiv.xhtml" TARGET="rules:#Arsiv.xhtml" TITLE="Arsiv" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="Kitap::#Kitap.xhtml" NAME="output3"
+    PATH="/Kitap.xhtml" TARGET="rules:#Kitap.xhtml" TITLE="Kitap" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#UyeOl.xhtml" PATH="/UyeOl.xhtml"
+  SHAPE="256,216,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#UyeOl.xhtml:0" NAME="item"
+   PATH="/UyeOl.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="geri::#Giris.xhtml" NAME="output"
+    PATH="/Giris.xhtml" TARGET="rules:#Giris.xhtml" TITLE="geri" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#YoneticiGiris.xhtml"
+  PATH="/YoneticiGiris.xhtml" SHAPE="648,122,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#YoneticiGiris.xhtml:0" NAME="item"
+   PATH="/YoneticiGiris.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="gir::#KitapYonetici.xhtml" NAME="output"
+    PATH="/KitapYonetici.xhtml" TARGET="rules:#KitapYonetici.xhtml"
+    TITLE="gir" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#KitapYonetici.xhtml"
+  PATH="/KitapYonetici.xhtml" SHAPE="848,112,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#Arsiv.xhtml" PATH="/Arsiv.xhtml"
+  SHAPE="465,299,0,0" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#Kitap.xhtml" PATH="/Kitap.xhtml"
+  SHAPE="568,224,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#NewFile.xhtml" PATH="/NewFile.xhtml"
+  SHAPE="992,136,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+</PROCESS>

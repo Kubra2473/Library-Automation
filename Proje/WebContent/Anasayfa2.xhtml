@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<f:view>
+		<h:form>
+			<h3 style="background-color: Black; padding: 20px; margin: 0; color: Bisque; font-style:;">Kutuphane</h3>
+			<p:separator />
+			<p:tabMenu activeIndex="#{param.i}">
+				<p:menuitem value="Anasayfa" outcome="Anasayfa2"  icon="pi pi-star">
+					<f:param name="i" value="0" />
+				</p:menuitem>
+				<p:menuitem value="Yonetici" outcome="YoneticiGiris"
+					icon="pi pi-briefcase">
+					<f:param name="i" value="3" />
+				</p:menuitem>
+				
+				<p:menuitem value="Kitap" outcome="Kitap" icon="pi pi-file">
+					<f:param name="i" value="2" />
+				</p:menuitem>
+				<p:menuitem value="Yazar" outcome="Arsiv" icon="pi pi-briefcase">
+					<f:param name="i" value="3" />
+				</p:menuitem>
+
+			</p:tabMenu>
+			<p:graphicImage id="pic" value="/images/nature1.jpg" />
+			<p:draggable for="pic" />
+       
+               <p:graphicImage id="pic2" value="/images/nature2.jpg" />
+			<p:draggable for="pic2" />
+              
+               <p:graphicImage id="pic3" value="/images/nature5.jpg" />
+			<p:draggable for="pic3" />
+                  <p:graphicImage id="pic4" value="/images/nature6.jpg" />
+			<p:draggable for="pic4" />
+
+    <p:tabView dynamic="true" cache="true" effect="fold">
+       
+        
+        <p:tab title="Kitap Ara">
+             Kitap Adi:<h:inputText value="#{kitapBean.ad}" />
+         <h:commandButton  value="Ara" />
+         
+         <p:dataTable value="#{kitapBean.KayitListe()}" var="cls">
+					<f:facet name="header">Kitap Listesi</f:facet>
+					<p:column>
+						<f:facet name="header">Kitap Adi</f:facet>
+						<h:outputText value="#{cls[0].kitapAdi}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Yazar Adi</f:facet>
+						<h:outputText value="#{cls[1].yazarAdi}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Yazar Soyadi</f:facet>
+						<h:outputText value="#{cls[1].yazarSoyadi}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Sayfa sayisi</f:facet>
+						<h:outputText value="#{cls[0].sayfaSayisi}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Yayin Tarihi</f:facet>
+						<h:outputText value="#{cls[0].yayinTarihi}" />
+					</p:column>
+					
+					<p:column>
+						<f:facet name="header">Bilgi</f:facet>
+						<h:outputText value="#{cls[0].aciklama}" />
+					</p:column>
+
+				</p:dataTable>
+        </p:tab>
+        <p:tab title="Grafik">
+          <p:chart type="pie" model="#{grafik.pieModel}" style="width:400px;height:300px" />  
+        </p:tab>
+    </p:tabView>
+
+</h:form>
+
+	</f:view>
+
+</body>
+</html>

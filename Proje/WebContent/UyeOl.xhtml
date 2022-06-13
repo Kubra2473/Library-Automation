@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style>
+body {
+	background: url(kkt.jpg);
+	background-size: 1850px 900px;
+	background-repeat: no-repeat;
+}
+
+div#yes {
+	margin-top: 40px;
+	margin-bottom: 350px;
+	margin-right: 600px;
+	margin-left: 600px;
+}
+</style>
+
+</h:head>
+<body>
+	<div id="yes">
+		<f:view>
+			<h:form>
+				<h:panelGrid columns="2">
+		Ad:<h:inputText value="#{demoBean.demo.ad}" />
+		Soyad:<h:inputText value="#{demoBean.demo.soyad}" />
+		Cinsiyet:<h:selectOneRadio value="#{demoBean.demo.cinsiyet}">
+						<f:selectItem itemLabel="Bayan" itemValue="Bayan" />
+						<f:selectItem itemLabel="Bay" itemValue="Bay" />
+					</h:selectOneRadio>
+		Yas:<h:inputText value="#{demoBean.demo.yas}" />
+		E posta:<h:inputText value="#{demoBean.demo.eposta}" />
+		Telefon:<h:inputText value="#{demoBean.demo.tel}" />
+		Kullanici Adi:<h:inputText value="#{demoBean.demo.kullaniciAdi}" />
+		Sifre:<h:inputSecret value="#{demoBean.demo.sifre}" />
+		Il:<h:selectOneMenu value="#{demoBean.demo.adres.il}" valueChangeListener="#{demoBean.ilceDegistir}" onchange="submit()">
+		<f:selectItems value="#{demoBean.liste}"/>
+		
+		</h:selectOneMenu>
+		Ilce:<h:selectOneMenu value="#{demoBean.demo.adres.ilce}">
+		<f:selectItems value="#{demoBean.ilceListesi}"/>
+		</h:selectOneMenu>
+		
+        <h:commandButton action="#{demoBean.kaydet()}" value="Kaydet" />
+        <h:commandButton action="geri" value="Geri" />
+      	</h:panelGrid>
+      	
+
+			</h:form>
+		</f:view>
+	</div>
+</body>
+</html>
